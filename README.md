@@ -6,6 +6,7 @@
 - 📫 How to reach me: wisdom_zhe@qq.com
 - 😄 Read more about my Blog: [here](https://blog.csdn.net/qq_44231797?spm=1000.2115.3001.5343)
 
+![](https://github-readme-stats.vercel.app/api?username=weisoho&show_icons=true&theme=transparent)
 
 You are my ![Visitor Count](https://profile-counter.glitch.me/weisoho/count.svg) visitor,Thank You!:kissing_heart::kissing_heart:
 
