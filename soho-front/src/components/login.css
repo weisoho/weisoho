@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #0f0c29;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.shape {
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  filter: blur(calc(8vw));
+}
+
+.shape:nth-child(1) {
+  background: #ff0f7b;
+  top: -20vw;
+  right: -10vw;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape:nth-child(2) {
+  background: #3b27ba;
+  bottom: -20vw;
+  left: -10vw;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(calc(-2vw)) scale(1.1); }
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: min(40px, 4vw);
+  width: min(460px, 90vw);
+  z-index: 1;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-header h1 {
+  color: #fff;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.form-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9em;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+/* 添加 placeholder 样式 */
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  transition: opacity 0.3s ease;
+}
+
+/* 输入框获得焦点时隐藏 placeholder */
+.input-group input:focus::placeholder {
+  opacity: 0;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.remember-forgot label {
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.forgot-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+  color: #ff0f7b;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(45deg, #ff0f7b, #3b27ba);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+.social-login {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social-login p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: linear-gradient(45deg, #ff0f7b, #3b27ba);
+  transform: translateY(-3px);
+}
+
+@media (min-width: 2560px) {
+  .login-box {
+    width: 600px;
+    padding: 60px;
+  }
+  
+  .form-header h1 {
+    font-size: 3em;
+  }
+  
+  .input-group input {
+    padding: 20px 20px 20px 55px;
+  }
+  
+  .social-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 2559px) {
+  .login-box {
+    width: 500px;
+    padding: 50px;
+  }
+  
+  .form-header h1 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 1439px) {
+  .login-box {
+    width: min(460px, 90vw);
+    padding: min(40px, 4vw);
+  }
+}
+
+@media (max-width: 768px) {
+  .shape {
+    width: 60vw;
+    height: 60vw;
+  }
+  
+  .login-box {
+    width: 90vw;
+    padding: 30px;
+  }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.register-option {
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.register-option p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+
+.register-link {
+  color: #ff0f7b;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, #ff0f7b, #3b27ba);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.register-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(45deg, #ff0f7b, #3b27ba);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.register-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* 更新媒体查询以适应新添加的元素 */
+@media (max-width: 768px) {
+  .register-option {
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+}
+
+.input-group.error input {
+  border: 1px solid rgba(255, 71, 87, 0.8);
+  box-shadow: 0 0 15px rgba(255, 71, 87, 0.3);
+}
+
+.input-group.error label {
+  color: rgba(255, 71, 87, 1);
+}
+
+.input-group.error .input-icon {
+  color: rgba(255, 71, 87, 1);
+}
+
+.error-message {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  font-size: 0.85em;
+  color: #fff;
+  background: rgba(255, 71, 87, 0.8);
+  padding: 4px 12px;
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease;
+  transform-origin: top left;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.input-group input:focus {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.input-group.error input:focus {
+  border-color: rgba(255, 71, 87, 1);
+  box-shadow: 0 0 20px rgba(255, 71, 87, 0.4);
+}
+
+/* 添加输入框聚焦时的过渡效果 */
+.input-group input {
+  transition: all 0.3s ease;
+}
+
+/* 添加错误状态的过渡效果 */
+.input-group.error {
+  transition: all 0.3s ease;
+}
