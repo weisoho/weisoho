@@ -1,5 +1,7 @@
 package org.soho.sohoweb.controller;
 
+import org.soho.sohocommon.api.CommonResult;
+import org.soho.sohoweb.dto.UserRegisterDTO;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("user")
 public class UserController {
     @PostMapping("register")
-    public String register(@RequestBody User user) {
+    public CommonResult register(@RequestBody UserRegisterDTO user) {
 
+        return CommonResult.success();
     }
 }
