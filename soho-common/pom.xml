@@ -7,17 +7,23 @@
         <artifactId>wesoho</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>org.soho</groupId>
     <artifactId>soho-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>soho-common</name>
     <description>soho-common</description>
 
     <properties>
-        <java.version>23</java.version>
+        <java.version>22</java.version>
     </properties>
     <dependencies>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
