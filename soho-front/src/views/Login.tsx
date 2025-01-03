@@ -14,7 +14,7 @@ import { Github, Mail, MessageSquare, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { loginAPI } from '@/services/api';
 import axios from 'axios';
-import { link } from 'fs';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -74,13 +74,14 @@ const Login = () => {
     return !newErrors.phone && !newErrors.password;
   };
 
+  const { login } = useAuth()
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
       try {
         const response = await loginAPI.login(formData.phone.replace(/\D/g, ''), formData.password);
-        console.log("response:", response);
         if (response.data.code === 200) {
+          login()
           navigate('/');
         } else {
           setErrors(prev => ({ ...prev, general: response.data.message }));
@@ -200,11 +201,11 @@ const Login = () => {
             >
               登录
             </Button>
-            
+
             <Button
               variant="link"
               className="w-full h-11 lg:h-12 text-base lg:text-lg mt-6 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              onClick={()=>navigate('/')}
+              onClick={() => navigate('/')}
             >
               暂不登录
             </Button>

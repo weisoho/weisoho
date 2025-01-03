@@ -24,8 +24,9 @@ public class UserController {
 
     /**
      * 注册
-     * @param user  用户注册入参
-     * @return      是否注册成功
+     *
+     * @param user 用户注册入参
+     * @return 是否注册成功
      */
     @PostMapping("register")
     public CommonResult<Boolean> register(@ModelAttribute @Validated UserRegisterDTO user) throws CustomValidationException {
@@ -35,8 +36,9 @@ public class UserController {
 
     /**
      * 登录
+     *
      * @param user 用户登录入参
-     * @return     登录token
+     * @return 登录token
      */
     @PostMapping("login")
     public CommonResult<String> login(@RequestBody UserLoginDTO user) throws CustomValidationException {
@@ -44,9 +46,21 @@ public class UserController {
         return CommonResult.success();
     }
 
-    @PostMapping("auth/check-auth")
-    public CommonResult<String> checkAuth() throws CustomValidationException {
-        StpUtil.checkLogin();
+    /**
+     * 登出
+     */
+    @PostMapping("logout")
+    public CommonResult<String> logout() {
+        StpUtil.logout();
+        return CommonResult.success();
+    }
+
+    /**
+     * 登出
+     */
+    @GetMapping("check-auth")
+    public CommonResult<String> checkAuth() {
+        StpUtil.logout();
         return CommonResult.success();
     }
 }

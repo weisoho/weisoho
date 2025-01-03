@@ -27,7 +27,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => {
     return response;
-  }, 
+  },
   (error) => {
     console.error('响应错误:', error);
     return Promise.reject(error);
@@ -37,6 +37,17 @@ api.interceptors.response.use(
 export const loginAPI = {
   login: (phone: string, password: string) => {
     return api.post('/user/login', { phone, password });
+  },
+  logout: () => {
+    return api.post('/user/lologoutgin', null, {
+      withCredentials: true,
+    });
+  }
+};
+
+export const checkAuthApi = {
+  checkAuth: () => {
+    return api.get('/user/check-auth');
   }
 };
 
