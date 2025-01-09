@@ -7,6 +7,7 @@ import Home from './views/Home';
 import { useAuth } from './contexts/AuthContext';
 import Login from './views/Login';
 import Register from './views/Register';
+import Article from './views/Article';
 
 const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated, isLoading } = useAuth();
@@ -28,9 +29,17 @@ function App() {
     {
       path: '/',
       element: (
-        <PrivateRoute>
-          <Home />
-        </PrivateRoute>
+        // <PrivateRoute>
+        <Home />
+        // </PrivateRoute>
+      ),
+    },
+    {
+      path: '/home',
+      element: (
+        // <PrivateRoute>
+        <Home />
+        // </PrivateRoute>
       ),
     },
     {
@@ -40,6 +49,10 @@ function App() {
     {
       path: '/register',
       element: <Register />,
+    },
+    {
+      path: '/article',
+      element: <Article />,
     },
     // 可以继续添加更多的路由
   ]);

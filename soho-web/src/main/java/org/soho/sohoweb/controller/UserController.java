@@ -56,11 +56,11 @@ public class UserController {
     }
 
     /**
-     * 登出
+     * 检验登录状态
      */
     @GetMapping("check-auth")
     public CommonResult<String> checkAuth() {
-        StpUtil.logout();
+        StpUtil.checkLogin();
         return CommonResult.success();
     }
 }
