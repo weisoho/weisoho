@@ -1,6 +1,7 @@
-const Article = ()=>{
-    return(
+const Article = () => {
+    return (
         <>
+
         </>
     )
 }
