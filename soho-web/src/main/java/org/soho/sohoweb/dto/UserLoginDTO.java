@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserLoginDTO {
-    @NotBlank(message = "密码不能为空！")
+    @NotBlank(message = "invalid.password")
     private String password;
 
     private String phone;
