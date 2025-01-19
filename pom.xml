@@ -84,6 +84,13 @@
                 <artifactId>sa-token-spring-boot3-starter</artifactId>
                 <version>1.39.0</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.github.slugify/slugify -->
+            <dependency>
+                <groupId>com.github.slugify</groupId>
+                <artifactId>slugify</artifactId>
+                <version>3.0.7</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

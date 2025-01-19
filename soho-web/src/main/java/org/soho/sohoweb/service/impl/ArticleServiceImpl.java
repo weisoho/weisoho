@@ -28,7 +28,7 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, ArticlePo> im
         BeanUtils.copyProperties(writeArticleDTO, articlePo);
         // 设置作者ID
         articlePo.setAuthorId(Long.parseLong(StpUtil.getLoginId().toString()));
-        if (articlePo.getArticleStatus() == ArticleStatus.PUBLISHED) {
+        if (articlePo.getArticleStatus() == ArticleStatus.published) {
             articlePo.setPublishedAt(LocalDateTime.now());
         }
         articlePo.setSlug(generateUniqueSlug(writeArticleDTO.getTitle()));

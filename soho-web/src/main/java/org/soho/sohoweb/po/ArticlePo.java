@@ -45,7 +45,7 @@ public class ArticlePo {
     @TableField("article_status")
     private ArticleStatus articleStatus;
 
-    // 有好的url
+    // 友好的url
     @TableField("slug")
     private String slug;
 

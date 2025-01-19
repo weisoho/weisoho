@@ -33,9 +33,10 @@ public class ArticleController {
      */
     @PostMapping("create")
     public CommonResult<String> createArticle(@RequestBody @Validated WriteArticleDTO writeArticleDTO) {
+        // 保存或发布文章
         articleService.saveOrPublished(writeArticleDTO);
         ArticleStatus articleStatus = writeArticleDTO.getArticleStatus();
-        return CommonResult.success(ArticleStatus.PUBLISHED == articleStatus ? messageUtil.getMessage("article.saved.success") : messageUtil.getMessage("article.published.success"));
+        return CommonResult.success(ArticleStatus.saved == articleStatus ? messageUtil.getMessage("article.saved.success") : messageUtil.getMessage("article.published.success"));
     }
 
 

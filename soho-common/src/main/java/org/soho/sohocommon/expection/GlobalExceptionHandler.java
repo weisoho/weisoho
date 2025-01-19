@@ -1,5 +1,6 @@
 package org.soho.sohocommon.expection;
 
+import cn.dev33.satoken.exception.NotLoginException;
 import lombok.extern.slf4j.Slf4j;
 import org.soho.sohocommon.api.CommonResult;
 import org.soho.sohocommon.enums.ErrorCode;
@@ -23,6 +24,13 @@ import java.util.Map;
 @ControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
+
+    @ExceptionHandler(NotLoginException.class)
+    public ResponseEntity<CommonResult<Map<String,String>>> notLoginException(NotLoginException ex) {
+
+        return new ResponseEntity<>(CommonResult.failed(HttpStatus.BAD_REQUEST.value(),ErrorCode.NOT_LOGIN.getMessage()), HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(value = CustomValidationException.class)
     public ResponseEntity<CommonResult<String>> handleCustomValidationException(CustomValidationException ex) {
         log.error("An unexpected error occurred: ", ex);

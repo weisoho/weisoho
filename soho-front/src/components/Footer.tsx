@@ -9,7 +9,7 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          © 2024 Your Name. All rights reserved.
+          © 2025 Wesoho. All rights reserved.
         </motion.p>
       </div>
     </footer>

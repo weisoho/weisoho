@@ -33,7 +33,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: auto;
   min-height: 100vh;
 }
 
@@ -152,4 +152,9 @@ button:focus-visible {
 
 .animate-customFadeInScale {
   animation: customFadeInScale 0.3s ease-in-out; /* 这里设置动画持续时间等参数，可根据喜好调整 */
+}
+
+.link {
+  color: inherit; /* 继承父元素的颜色 */
+  text-decoration: none; /* 去除下划线 */
 }

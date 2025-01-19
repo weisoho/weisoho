@@ -11,13 +11,15 @@ import lombok.Getter;
 @Getter
 public enum ArticleStatus {
     // 已发布
-    PUBLISHED("published"),
+    published("published"),
     // 已保存
-    SAVED("saved");
+    saved("saved");
 
     private final String articleStatus;
 
     ArticleStatus(String articleStatus) {
         this.articleStatus = articleStatus;
     }
+
+
 }

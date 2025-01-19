@@ -1,6 +1,12 @@
-import { motion } from 'framer-motion'
-import { Button } from "@/components/ui/button"
-import { Github, Mail, Linkedin } from 'lucide-react'
+import { motion } from 'framer-motion';
+import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import { Github, Mail, Linkedin } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -29,19 +35,31 @@ const Contact = () => {
           className="flex justify-center space-x-6"
         >
           {[
-            { Icon: Github, label: 'GitHub' },
-            { Icon: Mail, label: 'Email' },
-            { Icon: Linkedin, label: 'LinkedIn' },
-          ].map(({ Icon, label }, index) => (
+            { Icon: Github, label: 'GitHub', href: 'https://github.com/weisoho', tooltip: 'https://github.com/weisoho' },
+            { Icon: Mail, label: 'Email', href: 'mailto:pandawwei@gmail.com', tooltip: 'pandawwei@gmail.com' },
+            { Icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-linkedin-profile', tooltip: '查看我的 LinkedIn 页面' },
+          ].map(({ Icon, label, href, tooltip }, index) => (
             <motion.div
               key={label}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Button variant="outline" size="icon" className="rounded-full">
-                <Icon className="h-5 w-5" />
-                <span className="sr-only">{label}</span>
-              </Button>
+              {/* 使用 Tooltip 组件添加悬浮提示 */}
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <a href={href} target="_blank" className="link">
+                      <Button variant="outline" size="icon" className="rounded-full">
+                        <Icon className="h-5 w-5" />
+                        <span className="sr-only">{label}</span>
+                      </Button>
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    {tooltip}
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </motion.div>
           ))}
         </motion.div>
@@ -50,5 +68,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
-
+export default Contact;

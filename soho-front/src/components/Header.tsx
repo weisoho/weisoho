@@ -52,7 +52,7 @@ const Header = () => {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 backdrop-blur-md shadow-md' : 'bg-transparent'
+        isScrolled? 'bg-background/80 backdrop-blur-md shadow-md' : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -61,13 +61,13 @@ const Header = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-2xl font-bold text-primary"
+          className="text-2xl lg:text-3xl 2xl:text-4xl font-bold text-primary"
         >
           YourLogo
         </motion.div>
         
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8">
+        <ul className="hidden md:flex lg:flex lg:space-x-12 2xl:space-x-16 max-w-full"> {/* 使用 max-w-full 以利用更宽的屏幕 */}
           {navItems.map(({ label, path }, index) => (
             <motion.li
               key={label}
@@ -99,17 +99,17 @@ const Header = () => {
             variant="ghost"
             size="icon"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-label={isMobileMenuOpen? "Close menu" : "Open menu"}
           >
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
-                key={isMobileMenuOpen ? 'close' : 'open'}
+                key={isMobileMenuOpen? 'close' : 'open'}
                 initial={{ opacity: 0, rotate: 90 }}
                 animate={{ opacity: 1, rotate: 0 }}
                 exit={{ opacity: 0, rotate: -90 }}
                 transition={{ duration: 0.2 }}
               >
-                {isMobileMenuOpen ? <X /> : <Menu />}
+                {isMobileMenuOpen? <X /> : <Menu />}
               </motion.div>
             </AnimatePresence>
           </Button>
@@ -121,7 +121,7 @@ const Header = () => {
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: 'auto' } }
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden bg-background"

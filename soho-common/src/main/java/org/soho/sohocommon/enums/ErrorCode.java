@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 public enum ErrorCode {
 
     // 用户相关错误
+    NOT_LOGIN(10000,HttpStatus.UNAUTHORIZED.value(),"user.not.login"),
     USER_NOT_FOUND(10001, HttpStatus.NOT_FOUND.value(), "user.not.found"),
     INVALID_INPUT(10002, HttpStatus.BAD_REQUEST.value(), "invalid.input"),
     DUPLICATE_EMAIL(10003, HttpStatus.BAD_REQUEST.value(), "duplicate.email"),

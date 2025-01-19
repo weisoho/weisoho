@@ -59,6 +59,7 @@
             <groupId>cn.dev33</groupId>
             <artifactId>sa-token-spring-boot3-starter</artifactId>
         </dependency>
+
     </dependencies>
 
 </project>

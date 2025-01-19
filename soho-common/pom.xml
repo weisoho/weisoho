@@ -24,6 +24,14 @@
             <groupId>io.minio</groupId>
             <artifactId>minio</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.github.slugify</groupId>
+            <artifactId>slugify</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-spring-boot3-starter</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
