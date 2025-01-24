@@ -51,4 +51,10 @@ export const checkAuthApi = {
   }
 };
 
+export const articleApi = {
+  writeArticle: (title:string,content:string,status:string) => {
+    return api.post('/article/create',{title,content,status});
+  }
+};
+
 export default api;
