@@ -5,8 +5,8 @@ import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="首页" className="py-20 md:py-32 flex items-center min-h-screen w-full">
-      <div className="mx-auto px-4 grid md:grid-cols-2 gap-8 items-center w-full">
+    <section id="首页" className="py-20 md:py-32 flex items-center min-h-screen">
+      <div className="mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
